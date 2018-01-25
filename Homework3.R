@@ -1,6 +1,9 @@
 # Chimaobi Okakpu
 # Proper Vizualization of data
 
+ggplot(compensation, aes(x = Root, y = Fruit)) +
+  geom_point()
+
 # plotting basics with ggplot
 # my tutorial script
 # lots and lots of annotation!
