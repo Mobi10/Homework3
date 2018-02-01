@@ -16,3 +16,7 @@ glimpse(compensation)
 # make my first ggplot picture
 ggplot(compensation, aes(x = Root, y = Fruit)) +
   geom_point()
+
+##Load packages
+
+

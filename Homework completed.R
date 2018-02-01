@@ -1,7 +1,8 @@
 # plotting basics with ggplot
 # my tutorial script
-# lots and lots of annotation!
-# libraries I need (no need to install...)
+
+
+
 library(dplyr)
 library(ggplot2)
 # clear the decks
@@ -9,7 +10,6 @@ rm(list = ls())
 # get the data
 compensation <- read.csv('compensation.csv')
 # check out the data
-
 
 glimpse(compensation)
 # make my first ggplot picture
@@ -19,6 +19,31 @@ glimpse(compensation)
 # and assign colours and shapes to levels of a factor
 
 
+# Scatterplot -------------------------------------------------------------
+ggplot(compensation, aes(x = Root, y = Fruit)) +
+  geom_point()
+
+ggplot(compensation, aes(x = Root, y = Fruit)) +
+  geom_point() +
+  theme_bw()
+
+ggplot(compensation, aes(x = Root, y = Fruit)) +
+  geom_point(size = 5) +
+  xlab("Root Biomass") +
+  ylab("Fruit Production") +
+  theme_bw()
+
+ggplot(compensation, aes(x = Root, y = Fruit, colour = Grazing)) +
+  geom_point(size = 5) +
+  xlab("Root Biomass") +
+  ylab("Fruit Production") +
+  theme_bw()
+
+ggplot(compensation, aes(x = Root, y = Fruit, shape = Grazing)) +
+  geom_point(size = 5) +
+  xlab("Root Biomass") +
+  ylab("Fruit Production") +
+  theme_bw()
 ggplot(compensation, aes(x = Root, y = Fruit, colour = Grazing)) +
   geom_point(size = 5) +
   xlab("Root Biomass") +
@@ -26,12 +51,13 @@ ggplot(compensation, aes(x = Root, y = Fruit, colour = Grazing)) +
   theme_bw()
 
 
+
+# Boxplot -----------------------------------------------------------------
 ggplot(compensation, aes(x = Grazing, y = Fruit)) +
   geom_boxplot() +
   xlab("Grazing treatment") +
   ylab("Fruit Production") +
   theme_bw()
-
 
 ggplot(compensation, aes(x = Grazing, y = Fruit)) +
   geom_boxplot() +
@@ -40,18 +66,15 @@ ggplot(compensation, aes(x = Grazing, y = Fruit)) +
   ylab("Fruit Production") +
   theme_bw()
 
-
+# Histogram -------------------------------------------------------------
 ggplot(compensation, aes(x = Fruit)) +
   geom_histogram()
-## ‘stat_bin()‘ using ‘bins = 30‘. Pick better value with binwidth‘()
-
-
+## ‘stat_bin()‘ using ‘bins = 10‘. Pick better value with binwidth‘(15)
 
 ggplot(compensation, aes(x = Fruit)) +
   geom_histogram(bins = 10)
 ggplot(compensation, aes(x = Fruit)) +
   geom_histogram(binwidth = 15)
-
 
 ggplot(compensation, aes(x = Fruit)) +
   geom_histogram(binwidth = 15) +

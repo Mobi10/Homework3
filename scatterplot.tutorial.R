@@ -13,6 +13,8 @@ compensation <- read.csv('compensation.csv')
 # check out the data
 glimpse(compensation)
 
+
+# Scatterplot -------------------------------------------------------------
 # make my first ggplot picture
 ggplot(compensation, aes(x = Root, y = Fruit)) +
   geom_point()
