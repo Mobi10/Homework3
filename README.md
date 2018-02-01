@@ -1,2 +1,2 @@
 # Homework3
-Attempting to Answer Assignment number 3
+My result for Assignment 3
