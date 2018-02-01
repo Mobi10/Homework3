@@ -60,6 +60,7 @@ glimpse(compensation)
 # size alters the points
 # colour and shape are part of the aesthetics
 # and assign colours and shapes to levels of a factor
+
 ggplot(compensation, aes(x = Root, y = Fruit, colour = Grazing)) +
   geom_point(size = 5) +
   xlab("Root Biomass") +
